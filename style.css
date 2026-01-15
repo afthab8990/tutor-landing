@@ -1,0 +1,252 @@
+*,*::before,*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    
+    font-family: "Nunito", sans-serif;
+    font-size: clamp(14px, 1vw, 16px);
+}
+
+main {
+    display: grid;
+    grid-template-columns: minmax(0, 6fr) minmax(0, 4fr);
+    min-height: 100vh;
+}
+
+.hero {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+header {
+    padding: clamp(1em, 4vw, 3em);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav a {
+    font-size: clamp(14px, 1.4vw, 18px);
+    color: gray;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
+}
+
+.nav-logo img {
+    width: clamp(28px, 4vw, 48px);
+}
+
+article {
+    padding: clamp(1.5em, 4vw, 4em);
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2em, 5vw, 3.5em);
+}
+
+.article-head h1 {
+    margin: 0;
+    font-size: clamp(32px, 4.5vw, 56px);
+}
+
+.article-head h1 img {
+    width: clamp(22px, 3vw, 36px);
+}
+
+.article-head p {
+    font-size: clamp(14px, 1.3vw, 17px);
+    max-width: 60ch;
+}
+
+.article-stats {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+.stats h1 {
+    margin: 0;
+    font-size: clamp(24px, 3vw, 36px);
+}
+
+.stats p {
+    margin: 0;
+    font-size: clamp(14px, 1.4vw, 18px);
+    color: gray;
+}
+
+.image-stack {
+    position: relative;
+    width: 200px;
+    height: 90px;
+}
+
+.image-stack img {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 4px solid white;
+    object-fit: cover;
+}
+
+.image-stack img:nth-child(1) {
+    left: 0; 
+}
+.image-stack img:nth-child(2) {
+    left: 50px; 
+}
+.image-stack img:nth-child(3) {
+    left: 100px; 
+}
+
+.article-buttons {
+    display: flex;
+    gap: 1.25em;
+    align-items: center;
+}
+
+.booker {
+    padding: 0.75em 1.75em;
+    font-size: clamp(16px, 1.6vw, 22px);
+    border-radius: 999px;
+    border: none;
+    background-color: #2F584E;
+    color: white;
+    cursor: pointer;
+}
+
+.player {
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
+}
+
+.player img {
+    height: 32px;
+}
+
+
+footer {
+    padding: clamp(1.5em, 4vw, 3em);
+    display: flex;
+    gap: clamp(2em, 6vw, 6em);
+    background-color: #FF9257;
+}
+
+.resfooter{
+    display: none;
+    padding: clamp(1.5em, 4vw, 3em);
+    /* display: flex; */
+    gap: clamp(2em, 6vw, 6em);
+    width: 100%;
+    background-color: #FF9257;
+}
+
+.footer-stat {
+    color: white;
+    padding-left: 1em;
+    border-left: 0.3em solid #F7BE2C;
+}
+
+.footer-stat h1 {
+    margin: 0;
+    font-size: clamp(28px, 4vw, 52px);
+    font-weight: 400;
+}
+
+.footer-stat p {
+    margin: 0;
+    font-size: clamp(14px, 1.3vw, 16px);
+}
+
+
+.sidesec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    --s: 33px;
+    --c1: #d9e3ed;
+    --c2: #ffffff;
+    --_g: #0000 83%, var(--c1) 85% 99%, #0000 101%;
+
+    background:
+        radial-gradient(27% 29% at right, var(--_g)) calc(var(--s)/2) var(--s),
+        radial-gradient(27% 29% at left, var(--_g)) calc(var(--s)/-2) var(--s),
+        radial-gradient(29% 27% at top, var(--_g)) 0 calc(var(--s)/2),
+        radial-gradient(29% 27% at bottom, var(--_g)) 0 calc(var(--s)/-2)
+        var(--c2);
+
+    background-size: calc(2 * var(--s)) calc(2 * var(--s));
+}
+
+.picture-grid {
+    padding: 1em;
+    display: grid;
+    gap: 2em;
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
+    grid-auto-rows: 200px;
+}
+
+.pic-card {
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+}
+
+.pic-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.pc1, .pc5 { border-radius: 50%; }
+.pc2, .pc6 { border-radius: 5%; }
+.pc3 { border-radius: 50% 0 0 50%; }
+.pc4 { border-radius: 0 50% 0 0; }
+
+
+@media (max-width: 900px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-logo p {
+        display: none;
+    }
+
+    footer {
+        display: none;
+
+    }
+
+    .article-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .picture-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 160px;
+    }
+    .resfooter{
+    /* display: none; */
+    padding: clamp(1.5em, 4vw, 3em);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2em, 6vw, 6em);
+    width: 100%;
+    background-color: #FF9257;
+}
+}
