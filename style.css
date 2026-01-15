@@ -36,6 +36,11 @@ nav a {
     color: gray;
 }
 
+nav p {
+    font-size: clamp(14px, 1.4vw, 18px);
+    font-weight: 600;
+}
+
 .nav-logo {
     display: flex;
     align-items: center;
@@ -136,6 +141,10 @@ article {
     height: 32px;
 }
 
+.player p{
+    font-size: clamp(14px, 1.4vw, 18px);
+    font-weight: 600;
+}
 
 footer {
     padding: clamp(1.5em, 4vw, 3em);
